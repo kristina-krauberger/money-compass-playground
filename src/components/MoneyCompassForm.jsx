@@ -9,12 +9,12 @@ import React, { useState, useRef } from 'react';
  */
 function MoneyCompassForm({ onSubmit, isLoading }) {
   const [formData, setFormData] = useState({
-    age: 35,
-    monthlySavings: 100,
+    age: 0,
+    monthlySavings: 0,
     priorityReturn: 0,
     prioritySecurity: 0,
     priorityLiquidity: 0,
-    investmentHorizon: 'long'
+    investmentHorizon: ''
   });
 
   const handleChange = (e) => {
@@ -197,6 +197,7 @@ function MoneyCompassForm({ onSubmit, isLoading }) {
             onChange={handleChange}
             disabled={isLoading}
           >
+            <option value="" disabled>Bitte wählen</option>
             <option value="short">Kurz</option>
             <option value="medium">Mittel</option>
             <option value="long">Lang</option>
