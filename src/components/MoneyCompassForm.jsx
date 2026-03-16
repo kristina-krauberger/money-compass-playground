@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import './MoneyCompassForm.css';
 
 /**
  * MoneyCompassForm Component
@@ -95,68 +96,8 @@ function MoneyCompassForm({ onSubmit, isLoading }) {
     trackEl.addEventListener('pointerup', onUp);
   };
 
-  const barRowStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '10px',
-    marginBottom: '10px',
-  };
-
-  const barLabelStyle = {
-    minWidth: '80px',
-    fontWeight: '600',
-    fontSize: '14px',
-    color: 'var(--text-main)',
-  };
-
-  const barPctStyle = {
-    minWidth: '34px',
-    fontWeight: '700',
-    fontSize: '14px',
-    color: '#0EB689',
-    textAlign: 'right',
-  };
-
   return (
     <>
-      <style>{`
-        .priority-bar-track {
-          flex: 1;
-          max-width: 260px;
-          height: 8px;
-          border-radius: 4px;
-          background: #E1E8ED;
-          cursor: grab;
-          position: relative;
-          overflow: hidden;
-          transition: opacity 0.2s;
-          touch-action: none;
-          user-select: none;
-        }
-        .priority-bar-track:active {
-          cursor: grabbing;
-        }
-        .priority-bar-track:hover .priority-bar-fill {
-          filter: brightness(1.1);
-        }
-        .priority-bar-track.disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-        }
-        .priority-bar-fill {
-          height: 100%;
-          background: #0EB689;
-          border-radius: 4px;
-          transition: width 0.15s ease;
-        }
-        .compact-form .form-group {
-          margin-bottom: 12px;
-          gap: 5px;
-        }
-        .compact-form .card {
-          padding: 18px;
-        }
-      `}</style>
       <form className="card compact-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="age">Alter</label>
@@ -204,17 +145,17 @@ function MoneyCompassForm({ onSubmit, isLoading }) {
           </select>
         </div>
 
-        <div className="form-group" style={{ marginBottom: '8px' }}>
-          <p style={{ margin: '0 0 2px 0', fontWeight: '700', fontSize: '15px', color: 'var(--text-main)' }}>
+        <div className="form-group priority-section">
+          <p className="priority-title">
             Deine Investment-Prioritäten
           </p>
-          <p style={{ margin: '0 0 10px 0', fontSize: '13px', color: 'var(--text-muted)' }}>
+          <p className="priority-subtitle">
             Was ist dir beim Investieren am wichtigsten?<br />
             Verteile 100 % auf diese drei Prioritäten.
           </p>
 
-          <div style={barRowStyle}>
-            <span style={barLabelStyle}>Rendite</span>
+          <div className="bar-row">
+            <span className="bar-label">Rendite</span>
             <div
               className={`priority-bar-track${isLoading ? ' disabled' : ''}`}
               onPointerDown={(e) => handlePointerDown('priorityReturn', e)}
@@ -226,11 +167,11 @@ function MoneyCompassForm({ onSubmit, isLoading }) {
             >
               <div className="priority-bar-fill" style={{ width: `${formData.priorityReturn}%` }} />
             </div>
-            <span style={barPctStyle}>{formData.priorityReturn}%</span>
+            <span className="bar-pct">{formData.priorityReturn}%</span>
           </div>
 
-          <div style={barRowStyle}>
-            <span style={barLabelStyle}>Sicherheit</span>
+          <div className="bar-row">
+            <span className="bar-label">Sicherheit</span>
             <div
               className={`priority-bar-track${isLoading ? ' disabled' : ''}`}
               onPointerDown={(e) => handlePointerDown('prioritySecurity', e)}
@@ -242,11 +183,11 @@ function MoneyCompassForm({ onSubmit, isLoading }) {
             >
               <div className="priority-bar-fill" style={{ width: `${formData.prioritySecurity}%` }} />
             </div>
-            <span style={barPctStyle}>{formData.prioritySecurity}%</span>
+            <span className="bar-pct">{formData.prioritySecurity}%</span>
           </div>
 
-          <div style={{ ...barRowStyle, marginBottom: '0' }}>
-            <span style={barLabelStyle}>Liquidität</span>
+          <div className="bar-row last">
+            <span className="bar-label">Liquidität</span>
             <div
               className={`priority-bar-track${isLoading ? ' disabled' : ''}`}
               onPointerDown={(e) => handlePointerDown('priorityLiquidity', e)}
@@ -258,11 +199,11 @@ function MoneyCompassForm({ onSubmit, isLoading }) {
             >
               <div className="priority-bar-fill" style={{ width: `${formData.priorityLiquidity}%` }} />
             </div>
-            <span style={barPctStyle}>{formData.priorityLiquidity}%</span>
+            <span className="bar-pct">{formData.priorityLiquidity}%</span>
           </div>
         </div>
 
-        <button type="submit" className="submit-button" disabled={isLoading} style={{ marginTop: '6px' }}>
+        <button type="submit" className="submit-button submit-button-extra" disabled={isLoading}>
           {isLoading ? 'Wird erstellt...' : 'Empfehlung generieren'}
         </button>
       </form>

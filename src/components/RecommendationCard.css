@@ -1,0 +1,24 @@
+.recommendation-card {
+  border: 2px solid #EAF5F1;
+}
+
+.recommendation-bubble {
+  background-color: #F0F9F6;
+  padding: 20px;
+  border-radius: 16px;
+  border-top-left-radius: 4px;
+  color: var(--text-main);
+  line-height: 1.6;
+  font-size: 16px;
+  position: relative;
+}
+
+.recommendation-bubble.error-bubble {
+  background-color: #FFF5F5;
+  border: 1px solid #FFEBEB;
+  color: #5C3D3D;
+}
+
+.recommendation-bubble p {
+  margin: 0;
+}

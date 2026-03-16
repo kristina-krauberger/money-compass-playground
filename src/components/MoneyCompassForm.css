@@ -1,0 +1,91 @@
+.priority-bar-track {
+  flex: 1;
+  max-width: 260px;
+  height: 8px;
+  border-radius: 4px;
+  background: #E1E8ED;
+  cursor: grab;
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.2s;
+  touch-action: none;
+  user-select: none;
+}
+
+.priority-bar-track:active {
+  cursor: grabbing;
+}
+
+.priority-bar-track:hover .priority-bar-fill {
+  filter: brightness(1.1);
+}
+
+.priority-bar-track.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.priority-bar-fill {
+  height: 100%;
+  background: #0EB689;
+  border-radius: 4px;
+  transition: width 0.15s ease;
+}
+
+.compact-form .form-group {
+  margin-bottom: 12px;
+  gap: 5px;
+}
+
+.compact-form .card {
+  padding: 18px;
+}
+
+/* Extracted from Inline Styles */
+
+.priority-section {
+  margin-bottom: 8px;
+}
+
+.priority-title {
+  margin: 0 0 2px 0;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text-main);
+}
+
+.priority-subtitle {
+  margin: 0 0 10px 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.bar-row.last {
+  margin-bottom: 0;
+}
+
+.bar-label {
+  min-width: 80px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+.bar-pct {
+  min-width: 34px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #0EB689;
+  text-align: right;
+}
+
+.submit-button-extra {
+  margin-top: 6px;
+}

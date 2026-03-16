@@ -1,5 +1,6 @@
 import React from 'react';
 import CoachAvatar from './CoachAvatar';
+import './RecommendationCard.css';
 
 /**
  * RecommendationCard Component

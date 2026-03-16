@@ -1,0 +1,28 @@
+.coach-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.coach-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #E1E8ED;
+  border: 3px solid #EAF5F1;
+}
+
+.coach-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.coach-info p {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
