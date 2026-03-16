@@ -139,9 +139,9 @@ function MoneyCompassForm({ onSubmit, isLoading }) {
             disabled={isLoading}
           >
             <option value="" disabled>Bitte wählen</option>
-            <option value="short">Kurz</option>
-            <option value="medium">Mittel</option>
-            <option value="long">Lang</option>
+            <option value="kurzfristig">Unter 5 Jahre</option>
+            <option value="mittelfristig">5 bis 10 Jahre</option>
+            <option value="langfristig">Über 10 Jahre</option>
           </select>
         </div>
 
