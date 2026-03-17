@@ -2,7 +2,7 @@
 
 A React-based frontend prototype for testing an AI-powered investment recommendation system.
 
-👉 Live Demo: https://money-compass-playground.vercel.app/
+Live Demo: https://money-compass-playground.vercel.app/
 
 ---
 
